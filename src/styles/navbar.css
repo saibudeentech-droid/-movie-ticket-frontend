@@ -1,0 +1,183 @@
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 0 24px;
+  height: 84px;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(11,18,32,.74);
+  backdrop-filter: blur(12px);
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-search{
+  display:flex;
+  align-items:center;
+  flex: 1;
+  max-width: 360px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  padding: 0 12px;
+  transition: border-color .2s ease, background .2s ease;
+}
+
+.nav-search.focused{
+  border-color: rgba(124,58,237,.6);
+  background: rgba(255,255,255,.09);
+}
+
+.nav-search-icon{
+  font-size: 14px;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.nav-search input{
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 14px;
+  padding: 10px 10px;
+  font-family: inherit;
+}
+
+.nav-search input::placeholder{
+  color: var(--muted);
+}
+
+.nav-search-clear{
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px;
+  line-height: 1;
+  border-radius: 4px;
+  transition: color .15s ease;
+}
+
+.nav-search-clear:hover{
+  color: var(--text);
+}
+
+.nav-logo{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  text-decoration:none;
+  color: var(--text);
+}
+
+.nav-logo-icon{
+  font-size: 26px;
+  line-height: 1;
+}
+
+.nav-logo-text{
+  font-size: 18px;
+  font-weight: 950;
+  letter-spacing: .3px;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap: 6px;
+}
+
+.nav-link{
+  color: var(--muted);
+  text-decoration:none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  transition: color .15s ease, background .15s ease;
+}
+
+.nav-link:hover{
+  color: var(--text);
+  background: rgba(255,255,255,.06);
+}
+
+.nav-link.active{
+  color: var(--text);
+  background: rgba(124,58,237,.18);
+}
+
+.nav-login-btn{
+  background: rgba(124,58,237,.92);
+  color: #fff;
+  text-decoration:none;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 10px;
+  margin-left: 8px;
+  transition: background .15s ease, transform .1s ease;
+  border: 1px solid rgba(167,139,250,.55);
+}
+
+.nav-login-btn:hover{
+  background: rgba(124,58,237,1);
+  transform: translateY(-1px);
+}
+
+.nav-login-btn:active{
+  transform: translateY(0);
+}
+
+.nav-profile-trigger{
+  display:flex;
+  align-items:center;
+  cursor:pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background .15s ease;
+}
+
+.nav-profile-trigger:hover{
+  background: rgba(255,255,255,.08);
+}
+
+.profile-menu{
+  position:relative;
+  margin-left: 8px;
+}
+
+.dropdown{
+  position:absolute;
+  right:0;
+  top: 44px;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(17,28,51,.95);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  min-width: 170px;
+  z-index: 20;
+}
+
+.dropdown a{
+  display:block;
+  padding: 10px 10px;
+  border-radius: 10px;
+  text-decoration:none;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.dropdown a:hover{ background: rgba(124,58,237,.18); }
+
+.dropdown button{
+  width:100%;
+  margin-top:8px;
+}

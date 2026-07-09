@@ -1,0 +1,25 @@
+import api from "../utils/api";
+
+export async function getAllMovies() {
+  const res = await api.get("/movies");
+  return res.data;
+}
+
+export async function getMovieById(id) {
+  const res = await api.get(`/movies/${id}`);
+  return res.data;
+}
+
+export async function saveMovie(movie) {
+  if (movie.id) {
+    const res = await api.put(`/admin/movies/${movie.id}`, movie);
+    return res.data;
+  }
+  const res = await api.post("/admin/movies", movie);
+  return res.data;
+}
+
+export async function deleteMovie(id) {
+  await api.delete(`/admin/movies/${id}`);
+  return true;
+}

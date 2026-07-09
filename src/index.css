@@ -1,0 +1,54 @@
+@import "./styles/professional.css";
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+/* index.css kept intentionally minimal; the professional design is in src/styles/professional.css */
+
+@media (max-width: 600px){
+  nav{ padding: 15px 16px; }
+  .movie-container{ padding: 0 10px 30px; }
+  input{ width: 90%; }
+}
+
+/* Auth error UI */
+.auth-error{
+  margin-top: 12px;
+  color: #fca5a5;
+  background: rgba(220, 38, 38, 0.12);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  backdrop-filter: blur(4px);
+  animation: authErrorIn 0.2s ease;
+}
+
+@keyframes authErrorIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
