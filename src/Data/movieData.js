@@ -1,9 +1,14 @@
 import api from "../utils/api";
 
-export async function getAllMovies() {
-  const res = await api.get("/movies");
-  return res.data;
-}
+//export async function getAllMovies() {
+  // res = await api.get("/movies");
+  //return res.data;
+//}
+
+export const getAllMovies = async () => {
+  const res = await api.get('/movies'); // or whatever your endpoint is
+  return res.data.content; // not res.data
+};
 
 export async function getMovieById(id) {
   const res = await api.get(`/movies/${id}`);
