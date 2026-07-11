@@ -54,8 +54,6 @@ function Register() {
       <h1>Create Account</h1>
       <p style={{ margin: "-6px 0 18px", color: "var(--muted)", fontSize: 14 }}>Join us and start booking</p>
 
-      {error && <div className="auth-error"><span aria-hidden="true">⚠️</span>{error}</div>}
-
       <form className="auth-form" onSubmit={(e) => { e.preventDefault(); submit(); }}>
         <div className="input-group">
           <label className="input-label">Name</label>
@@ -111,13 +109,6 @@ function Register() {
           Register
         </button>
       </form>
-          </div>
-        </div>
-      </div>
-
-      <button type="button" onClick={submit}>
-        Register
-      </button>
 
       <div className="auth-switch">
         <p className="auth-switch-text">Already have an account?</p>
