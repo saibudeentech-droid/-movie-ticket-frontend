@@ -56,7 +56,7 @@ function Register() {
 
       {error && <div className="auth-error"><span aria-hidden="true">⚠️</span>{error}</div>}
 
-      <div className="auth-form">
+      <form className="auth-form" onSubmit={(e) => { e.preventDefault(); submit(); }}>
         <div className="input-group">
           <label className="input-label">Name</label>
           <input
@@ -102,6 +102,15 @@ function Register() {
                 </svg>
               )}
             </button>
+          </div>
+        </div>
+
+        {error && <div className="auth-error"><span aria-hidden="true">⚠️</span>{error}</div>}
+
+        <button type="submit">
+          Register
+        </button>
+      </form>
           </div>
         </div>
       </div>

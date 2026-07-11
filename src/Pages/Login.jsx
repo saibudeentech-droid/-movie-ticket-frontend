@@ -54,7 +54,7 @@ function Login() {
       <h1>Welcome Back</h1>
       <p style={{ margin: "-6px 0 18px", color: "var(--muted)", fontSize: 14 }}>Sign in to your account</p>
 
-      <div className="auth-form">
+      <form className="auth-form" onSubmit={(e) => { e.preventDefault(); submit(); }}>
         <div className="input-group">
           <label className="input-label">Email</label>
           <input
@@ -99,20 +99,20 @@ function Login() {
             </button>
           </div>
         </div>
-      </div>
 
-      {authError && (
-        <div className="auth-error" role="alert" aria-live="polite">
-          <span aria-hidden="true">⚠️</span>
-          {authError.type === "server"
-            ? "Server error. Please try again."
-            : "Invalid password or email"}
-        </div>
-      )}
+        {authError && (
+          <div className="auth-error" role="alert" aria-live="polite">
+            <span aria-hidden="true">⚠️</span>
+            {authError.type === "server"
+              ? "Server error. Please try again."
+              : "Invalid password or email"}
+          </div>
+        )}
 
-      <button type="button" onClick={submit}>
-        Login
-      </button>
+        <button type="submit">
+          Login
+        </button>
+      </form>
 
       <div className="auth-switch">
         <p className="auth-switch-text">New user?</p>

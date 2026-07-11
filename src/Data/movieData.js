@@ -1,7 +1,7 @@
 import api from "../utils/api";
 
 export async function getAllMovies() {
-   res = await api.get("/movies");
+  const res = await api.get("/movies");
   return res.data;
 }
 //export const getAllMovies = async () => {
