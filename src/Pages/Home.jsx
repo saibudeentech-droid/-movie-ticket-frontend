@@ -10,7 +10,7 @@ function Home() {
   const search = searchParams.get("q") || "";
 
   useEffect(() => {
-    getAllMovies().then((data) => setMovies(data ?? [])).catch(() => setMovies([]));
+    getAllMovies().then((data) => setMovies(data ?? [])).catch((err) => { console.error("Failed to load movies:", err); setMovies([]); });
   }, []);
 
   const filteredMovies = movies.filter((movie) =>
