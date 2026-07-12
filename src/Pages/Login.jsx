@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
-import { useToast } from "../Context/ToastContext";
 import api from "../utils/api";
 import Loader from "../Components/Loader";
 
@@ -12,7 +11,6 @@ function Login() {
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
 
-  const showToast = useToast();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

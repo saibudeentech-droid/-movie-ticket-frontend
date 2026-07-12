@@ -2,14 +2,12 @@ import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 
 import { AuthContext } from "../Context/AuthContext";
-import { useToast } from "../Context/ToastContext";
 import api from "../utils/api";
 
 function Register() {
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
 
-  const showToast = useToast();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

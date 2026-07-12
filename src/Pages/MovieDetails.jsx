@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Box, Typography, Button, Chip } from "@mui/material";
 import BackButton from "../Components/BackButton";
 import "../styles/backButton.css";
@@ -70,7 +70,7 @@ function MovieDetails() {
 
   useEffect(() => {
     let mounted = true;
-    setLoading(true);
+    setLoading(true); // eslint-disable-line react-hooks/set-state-in-effect
     setError("");
     getMovieById(id)
       .then((data) => { if (mounted) { setMovie(data); setLoading(false); } })
@@ -81,7 +81,7 @@ function MovieDetails() {
   useEffect(() => {
     if (!id || loading) return;
     let cancelled = false;
-    setRevLoading(true);
+    setRevLoading(true); // eslint-disable-line react-hooks/set-state-in-effect
     getReviewsByMovieId(id)
       .then((data) => { if (!cancelled) setReviews(data ?? []); })
       .catch(() => { if (!cancelled) setReviews([]); })

@@ -17,7 +17,6 @@ function Profile() {
   const [gender, setGender] = useState("");
   const [address, setAddress] = useState("");
   const [saving, setSaving] = useState(false);
-  const [message, setMessage] = useState("");
 
   useEffect(() => {
     api.get("/users/profile")
@@ -33,7 +32,6 @@ function Profile() {
 
   const handleSave = async () => {
     setSaving(true);
-    setMessage("");
     try {
       const res = await api.put("/users/profile", { name, email, phone, gender, address });
       const updated = res.data;

@@ -9,7 +9,7 @@ function Reviews() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
+    setLoading(true); // eslint-disable-line react-hooks/set-state-in-effect
     api.get("/reviews", { params: { movieId } })
       .then((res) => setReviews(res.data ?? []))
       .catch(() => setReviews([]))
